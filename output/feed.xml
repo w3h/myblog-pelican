@@ -88,7 +88,7 @@
 3、使用Markdown写文章。
 4、GitHub的使用&lt;/p&gt;
 &lt;h4&gt;&lt;strong&gt;快速搭建技巧&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;1、基于别人的已搭建好系统修改。网上有很多文章，都在讲怎么从头创建一个静态站点，怎么修改配置文件，怎么安装插件...，曾经我花了一天从头开始研究，遇到一堆的问题。如果你有大量的时间，可以重头搞一下&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">webhhh</dc:creator><pubDate>Mon, 12 May 2014 03:14:00 +0800</pubDate><guid>tag:www.webhhh.net,2014-05-12:life/create-first-blog.html</guid><category>人生</category><category>联系</category></item><item><title>关于我</title><link>http://www.webhhh.net/life/life-main-point.html</link><description>&lt;h4&gt;&lt;strong&gt;人生阅历&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;1、基于别人的已搭建好系统修改。网上有很多文章，都在讲怎么从头创建一个静态站点，怎么修改配置文件，怎么安装插件...，曾经我花了一天从头开始研究，遇到一堆的问题。如果你有大量的时间，可以重头搞一下&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">webhhh</dc:creator><pubDate>Mon, 12 May 2014 03:14:00 +0800</pubDate><guid>tag:www.webhhh.net,2014-05-12:life/create-first-blog.html</guid><category>GitHub</category><category>博客</category></item><item><title>关于我</title><link>http://www.webhhh.net/life/life-main-point.html</link><description>&lt;h4&gt;&lt;strong&gt;人生阅历&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;......（未完待续）&lt;/p&gt;
@@ -100,7 +100,7 @@
 &lt;p&gt;2014年04月: 裸辞，决战互联网&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;2014年09月: 终于有了属于自己的家&lt;/p&gt;
+&lt;p&gt;2013年09月: 终于有了属于自己的家&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;2012年02月: 可爱的宝宝诞生&lt;/p&gt;
@@ -155,7 +155,48 @@
 &lt;p&gt;所以我的vim每打开一个文件，先尝试用utf-8进行解码，如果用utf-8解码到了一半出错(所谓出错的意思是某个地方无法用utf-8正确地 解码)，那么就从头来用gb18030重新尝试解码，如果gb18030又出错(注意gb18030并不是像utf-8似的规则编码，所以所谓的出错只是 说某个编码没有对应的有意义的字，比如0)，就尝试用utf-16，仍然出错就尝试用big5。这一趟下来，如果中间的某次解码从头到尾都没有出错，那么 vim就认为这个文件是这个编码的，不会再进行后面的尝试了。这个时候，fenc的值就会被设为vim最后采用的编码值，可以用:set fenc?来查看具体是什么。&lt;/p&gt;
 &lt;p&gt;当然这个也是有可能出错的，比如你的文件是gb18030编码的，但是实际上只有一两个字符是中文，那么有可能他们正好也能被utf-8解码，那么这个文件就会被误认为是utf-8的导致错误解码。&lt;/p&gt;
 &lt;p&gt;至于enc，其作用基本只是显示。不管最后的文件是什么编码的，vim都会将其转换为当前系统编码来进行处理，这样才能在当前系统里面正确地显示出 来，因此enc就是干这个的。在windows下面，enc默认是cp936，这也就是中文windows的默认编码，所以enc是不需要改的。在 linux下，随着你的系统locale可能设为zh_CN.gb18030或者zh_CN.utf-8，你的enc要对应的设为gb18030或者 utf-8(或者gbk之类的)。&lt;/p&gt;
-&lt;p&gt;最后再来说一下新建空文件的默认编码。看文档好像说会采用fencs里面的第一个编码作为新建文件的默认编码。但是这里有一个问题，就是fencs 的顺序跟解码成功率有很大关系，根据我的经验utf-8在前比gb18030在前成功率要高一些，那么如果我新建文件默认想让它是gb18030编码怎么 办？一个方法是每次新建文件后都:set fenc=gb18030一下，不过我发现在vimrc里面设置fenc=gb18030也能达到这个效果。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">webhhh</dc:creator><pubDate>Mon, 12 May 2014 02:14:00 +0800</pubDate><guid>tag:www.webhhh.net,2014-05-12:tool/md-file-encode.html</guid><category>vim</category><category>encode</category></item><item><title>MD5在线破解</title><link>http://www.webhhh.net/code/md5crack.html</link><description>&lt;h4&gt;&lt;strong&gt;1、功能介绍&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;最后再来说一下新建空文件的默认编码。看文档好像说会采用fencs里面的第一个编码作为新建文件的默认编码。但是这里有一个问题，就是fencs 的顺序跟解码成功率有很大关系，根据我的经验utf-8在前比gb18030在前成功率要高一些，那么如果我新建文件默认想让它是gb18030编码怎么 办？一个方法是每次新建文件后都:set fenc=gb18030一下，不过我发现在vimrc里面设置fenc=gb18030也能达到这个效果。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">webhhh</dc:creator><pubDate>Mon, 12 May 2014 02:14:00 +0800</pubDate><guid>tag:www.webhhh.net,2014-05-12:tool/md-file-encode.html</guid><category>vim</category><category>encode</category></item><item><title>xpath快速应用平台搭建</title><link>http://www.webhhh.net/python/xpath.html</link><description>&lt;p&gt;xpath的语法虽然不算复杂，但在要庞大的网页中准确的写出对应的xpath表达式，还是一个不容易的事。使用下面二个工具使用，会起到立竿见影的效果，再也不用盯着网页数节点&lt;/p&gt;
+&lt;h5&gt;&lt;strong&gt;1、FirePath&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;一个FireFox扩展插件，可以准确的提取网页中的每一个元素的xpath匹配信息，安装FireFox插件需要先安装Firebug插件，这个我相信大家并不陌生，比如要抓取搜狐网导航上的“搜狗”两字，使用此插件抓取xpath信息如下&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="c1"&gt;//*[@id=&amp;#39;navList&amp;#39;]/div[1]/ul/li[1]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;&lt;strong&gt;2、Scrapy shell&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;Scrapy是一个使用python写的爬虫框架，使用此框架，开发者能够快速的开发一个网络爬虫，Scrapy shell是Scrapy提供的一个调试工具，可以抓取网页内容，里面集成了一个xpath的调试函数，借助此函数可以验证FirePath抓取的xpath匹配信息是否正确，使用如下命令启动shell调试&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;scrapy&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;http://www.sohu.com&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;显示如下&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt; Available Scrapy objects:
+&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   crawler    &lt;span class="nt"&gt;&amp;lt;scrapy&lt;/span&gt;&lt;span class="err"&gt;.&lt;/span&gt;&lt;span class="na"&gt;crawler&lt;/span&gt;&lt;span class="err"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Cr&lt;/span&gt;&lt;span class="err"&gt;.//*&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;navList&amp;#39;&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="err"&gt;/&lt;/span&gt;&lt;span class="na"&gt;div&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="err"&gt;/&lt;/span&gt;&lt;span class="na"&gt;ul&lt;/span&gt;&lt;span class="err"&gt;/&lt;/span&gt;&lt;span class="na"&gt;li&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="na"&gt;awler&lt;/span&gt; &lt;span class="na"&gt;object&lt;/span&gt; &lt;span class="na"&gt;at&lt;/span&gt; &lt;span class="na"&gt;0x011FA310&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   item       {}
+&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   request    &lt;span class="nt"&gt;&amp;lt;GET&lt;/span&gt; &lt;span class="na"&gt;http:&lt;/span&gt;&lt;span class="err"&gt;//&lt;/span&gt;&lt;span class="na"&gt;sohu&lt;/span&gt;&lt;span class="err"&gt;.&lt;/span&gt;&lt;span class="na"&gt;com&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   response   &lt;span class="nt"&gt;&amp;lt;200&lt;/span&gt; &lt;span class="na"&gt;http:&lt;/span&gt;&lt;span class="err"&gt;//&lt;/span&gt;&lt;span class="na"&gt;www&lt;/span&gt;&lt;span class="err"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sohu&lt;/span&gt;&lt;span class="err"&gt;.&lt;/span&gt;&lt;span class="na"&gt;com&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   sel        &lt;span class="nt"&gt;&amp;lt;Selector&lt;/span&gt; &lt;span class="na"&gt;xpath=&lt;/span&gt;&lt;span class="s"&gt;None&lt;/span&gt; &lt;span class="na"&gt;data=&lt;/span&gt;&lt;span class="s"&gt;u&amp;#39;&amp;lt;html&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascrip&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   settings   &lt;span class="nt"&gt;&amp;lt;CrawlerSettings&lt;/span&gt; &lt;span class="na"&gt;module=&lt;/span&gt;&lt;span class="s"&gt;None&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   spider     &lt;span class="nt"&gt;&amp;lt;Spider&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="na"&gt;default&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;at&lt;/span&gt; &lt;span class="na"&gt;0x1bd5d10&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt; Useful shortcuts:
+&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   shelp()           Shell help (print this help)
+&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   fetch(req_or_url) Fetch request (or URL) and update local objects
+&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   view(response)    View response in a browser
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;使用FirePath的xpath抓取结果&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;sel&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;.//*[@id=&amp;#39;navList&amp;#39;]/div[1]/ul/li[1]&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Selector&lt;/span&gt; &lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;.//*[@id=&amp;#39;navList&amp;#39;]/div[1]/ul/li[1]&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;li&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;red&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.sogo&amp;#39;&amp;gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;&lt;strong&gt;3、问题&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;两个工具配合，基本不用深入理解xpath语法，也能快速的使用xpath语法抓取，但偶尔会出现两个工具之间不一致的情况，适当排查修改一下即可。&lt;/p&gt;
+&lt;h5&gt;&lt;strong&gt;4、阅读资料&lt;/strong&gt;&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.w3school.com.cn/xpath/"&gt;w3school XPath 教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.csdn.net/php_fly/article/details/19555969"&gt;Scrapy shell使用&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">webhhh</dc:creator><pubDate>Sat, 10 May 2014 12:14:00 +0800</pubDate><guid>tag:www.webhhh.net,2014-05-10:python/xpath.html</guid><category>xpath</category><category>FirePath</category><category>Scrapy</category></item><item><title>MD5在线破解</title><link>http://www.webhhh.net/code/md5crack.html</link><description>&lt;h4&gt;&lt;strong&gt;1、功能介绍&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;MD5破解网站更新速度太快，导致很多MD5破解工具，很快就不能使用，因此自己写了一个程序，使用python开发的。参考了大量网上的开源程序和代码，收集了当前网上大部份常用的破解网站，并做了相应的优化和重写，提供了一个简单MD5破解的框架，提高了开发和维护的成本，&lt;a href="https://github.com/webhhh/md5crack.git"&gt;github链接&lt;/a&gt;，提供的功能如下&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -233,45 +274,4 @@
 &lt;p&gt;直接删除plugin目录下对应的py文件即可，不需要做任何修改&lt;/p&gt;
 &lt;p&gt;2、增加插件：&lt;/p&gt;
 &lt;p&gt;【步骤1】 拷贝插件开发模板“plugin/template.py”重命名&lt;/p&gt;
-&lt;p&gt;【步骤2】 修改抓取网页部分代码即可，可以使用多种方式抓取，如下图，修改红色框即可&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">webhhh</dc:creator><pubDate>Tue, 18 Mar 2014 10:22:00 +0800</pubDate><guid>tag:www.webhhh.net,2014-03-18:code/md5crack.html</guid><category>MD5</category><category>破解</category></item><item><title>xpath快速应用平台搭建</title><link>http://www.webhhh.net/python/xpath.html</link><description>&lt;p&gt;xpath的语法虽然不算复杂，但在要庞大的网页中准确的写出对应的xpath表达式，还是一个不容易的事。使用下面二个工具使用，会起到立竿见影的效果，再也不用盯着网页数节点&lt;/p&gt;
-&lt;h5&gt;&lt;strong&gt;1、FirePath&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;一个FireFox扩展插件，可以准确的提取网页中的每一个元素的xpath匹配信息，安装FireFox插件需要先安装Firebug插件，这个我相信大家并不陌生，比如要抓取搜狐网导航上的“搜狗”两字，使用此插件抓取xpath信息如下&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="c1"&gt;//*[@id=&amp;#39;navList&amp;#39;]/div[1]/ul/li[1]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5&gt;&lt;strong&gt;2、Scrapy shell&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;Scrapy是一个使用python写的爬虫框架，使用此框架，开发者能够快速的开发一个网络爬虫，Scrapy shell是Scrapy提供的一个调试工具，可以抓取网页内容，里面集成了一个xpath的调试函数，借助此函数可以验证FirePath抓取的xpath匹配信息是否正确，使用如下命令启动shell调试&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;scrapy&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;http://www.sohu.com&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;显示如下&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt; Available Scrapy objects:
-&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   crawler    &lt;span class="nt"&gt;&amp;lt;scrapy&lt;/span&gt;&lt;span class="err"&gt;.&lt;/span&gt;&lt;span class="na"&gt;crawler&lt;/span&gt;&lt;span class="err"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Cr&lt;/span&gt;&lt;span class="err"&gt;.//*&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;navList&amp;#39;&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="err"&gt;/&lt;/span&gt;&lt;span class="na"&gt;div&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="err"&gt;/&lt;/span&gt;&lt;span class="na"&gt;ul&lt;/span&gt;&lt;span class="err"&gt;/&lt;/span&gt;&lt;span class="na"&gt;li&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="na"&gt;awler&lt;/span&gt; &lt;span class="na"&gt;object&lt;/span&gt; &lt;span class="na"&gt;at&lt;/span&gt; &lt;span class="na"&gt;0x011FA310&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   item       {}
-&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   request    &lt;span class="nt"&gt;&amp;lt;GET&lt;/span&gt; &lt;span class="na"&gt;http:&lt;/span&gt;&lt;span class="err"&gt;//&lt;/span&gt;&lt;span class="na"&gt;sohu&lt;/span&gt;&lt;span class="err"&gt;.&lt;/span&gt;&lt;span class="na"&gt;com&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   response   &lt;span class="nt"&gt;&amp;lt;200&lt;/span&gt; &lt;span class="na"&gt;http:&lt;/span&gt;&lt;span class="err"&gt;//&lt;/span&gt;&lt;span class="na"&gt;www&lt;/span&gt;&lt;span class="err"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sohu&lt;/span&gt;&lt;span class="err"&gt;.&lt;/span&gt;&lt;span class="na"&gt;com&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   sel        &lt;span class="nt"&gt;&amp;lt;Selector&lt;/span&gt; &lt;span class="na"&gt;xpath=&lt;/span&gt;&lt;span class="s"&gt;None&lt;/span&gt; &lt;span class="na"&gt;data=&lt;/span&gt;&lt;span class="s"&gt;u&amp;#39;&amp;lt;html&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascrip&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   settings   &lt;span class="nt"&gt;&amp;lt;CrawlerSettings&lt;/span&gt; &lt;span class="na"&gt;module=&lt;/span&gt;&lt;span class="s"&gt;None&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   spider     &lt;span class="nt"&gt;&amp;lt;Spider&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="na"&gt;default&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;at&lt;/span&gt; &lt;span class="na"&gt;0x1bd5d10&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt; Useful shortcuts:
-&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   shelp()           Shell help (print this help)
-&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   fetch(req_or_url) Fetch request (or URL) and update local objects
-&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;s&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;   view(response)    View response in a browser
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;使用FirePath的xpath抓取结果&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;sel&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;.//*[@id=&amp;#39;navList&amp;#39;]/div[1]/ul/li[1]&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Selector&lt;/span&gt; &lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;.//*[@id=&amp;#39;navList&amp;#39;]/div[1]/ul/li[1]&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;li&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;red&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.sogo&amp;#39;&amp;gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5&gt;&lt;strong&gt;3、问题&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;两个工具配合，基本不用深入理解xpath语法，也能快速的使用xpath语法抓取，但偶尔会出现两个工具之间不一致的情况，适当排查修改一下即可。&lt;/p&gt;
-&lt;h5&gt;&lt;strong&gt;4、阅读资料&lt;/strong&gt;&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.w3school.com.cn/xpath/"&gt;w3school XPath 教程&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://blog.csdn.net/php_fly/article/details/19555969"&gt;Scrapy shell使用&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">webhhh</dc:creator><pubDate>Thu, 08 Aug 2013 12:14:00 +0800</pubDate><guid>tag:www.webhhh.net,2013-08-08:python/xpath.html</guid><category>xpath</category><category>FirePath</category><category>Scrapy</category></item></channel></rss>
+&lt;p&gt;【步骤2】 修改抓取网页部分代码即可，可以使用多种方式抓取，如下图，修改红色框即可&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">webhhh</dc:creator><pubDate>Tue, 18 Mar 2014 10:22:00 +0800</pubDate><guid>tag:www.webhhh.net,2014-03-18:code/md5crack.html</guid><category>MD5</category><category>破解</category></item></channel></rss>
