@@ -62,7 +62,7 @@ AUTHOR_SAVE_AS = ''
 AUTHORS_SAVE_AS = ''
 
 # Tag_Cloud Config
-TAG_CLOUD_STEPS = 5 # Count of different font sizes in the tag cloud.
+TAG_CLOUD_STEPS = 4 # Count of different font sizes in the tag cloud.
 TAG_CLOUD_MAX_ITEMS = 100  # Maximum number of tags in the cloud.
 
 # Feed generation is usually not desired when developing
@@ -76,7 +76,8 @@ TRANSLATION_FEED_ATOM = None
 
 # Blogroll
 LINKS =  ( 
-            ('GitHub', 'https://github.com/webhhh/'),
+            ('乌云', 'http://www.wooyun.org/index.php'),
+            ('漏洞时代', 'http://0day5.com/'),
             ('Python.org', 'http://python.org/'),
          )
 
@@ -148,3 +149,6 @@ GOOGLE_ANALYTICS_UNIVERSAL_PROPERTY = r'webhhh.net'
 
 # 显示作者
 SHOW_ARTICLE_AUTHOR = True
+
+# Github配置
+GITHUB_USER = 'webhhh'
