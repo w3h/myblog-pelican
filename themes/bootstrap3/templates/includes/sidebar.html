@@ -1,0 +1,85 @@
+<div class="row">
+<div class="well well-sm" id="sidebar">
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+            {% if DISPLAY_RECENT_POSTS_ON_SIDEBAR %}
+                {% if RECENT_POST_COUNT is not defined %}
+                    {% set RECENT_POST_COUNT = 5 %}
+                {% endif %}
+                <li class="list-group-item"><a href=""><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">最新日志</span></h4>
+                    <ul class="list-group" id="recentposts">
+                    {% for article in articles[:RECENT_POST_COUNT] %}
+                        <li class="list-group-item">
+                            <a href="{{ SITEURL }}/{{ article.url }}">
+                                {{ article.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </li>
+            {% endif %}
+    </section>            
+</aside>
+</div> 
+</div> 
+
+<div class="row">
+<div class="well well-sm" id="sidebar">
+<aside>
+    <section>
+
+            {% if DISPLAY_CATEGORIES_ON_SIDEBAR %}
+                <li class="list-group-item"><a href="{{ SITEURL }}/{{ CATEGORIES_SAVE_AS }}"><h4><i class="fa fa-coffee fa-lg"></i><span class="icon-label">日志分类</span></h4></a>
+                    <ul class="list-group" id="categories">
+                    {% for cat, null in categories %}
+                        <li class="list-group-item">
+                            <a href="{{ SITEURL }}/{{ cat.url }}">
+                                <i class="fa fa-folder-open fa-lg"></i> {{ cat }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </li>
+            {% endif %}
+
+    </section>            
+</aside>
+</div>  
+</div> 
+
+<div class="row">
+<div class="well well-sm" id="sidebar">
+<aside>    
+    <section>
+          <li class="list-group-item"><a href=""><h4><i class="fa fa-camera fa-lg"></i><span class="icon-label">微博</span></h4>
+          </li>
+<iframe width="100%" height="490" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=490&fansRow=1&ptype=0&speed=0&skin=1&isTitle=0&noborder=1&isWeibo=1&isFans=1&uid=1966145513&verifier=629c02a7&dpc=1"></iframe>
+
+</aside>
+</div> 
+</div> 
+
+
+<div class="row">
+<div class="well well-sm" id="sidebar">
+<aside>
+    <section>
+            {% if DISPLAY_TAGS_ON_SIDEBAR %}
+                <li class="list-group-item"><a href="{{ SITEURL }}/{{ TAGS_SAVE_AS }}"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">标签云</span></h4></a>
+                    <ul class="list-group" id="tags">
+                    {#{% for tag in tag_cloud|sort(attribute='1') %}#}
+                    {% for tag in tag_cloud %}
+                        <span class="list-group-item tag-{{ tag.1 }}">
+                            <a href="{{ SITEURL }}/{{ tag.0.url }}">
+                                {{ tag.0 }}
+                            </a>
+                        </span>
+                    {% endfor %}
+                    </ul>
+                </li>
+            {% endif %}
+    </section>            
+</aside>
+</div> 
+</div> 

@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<head>
+    <title>random</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        function redirect(){
+            var urls = [
+ "/web-security/PHP-strcpy.html",
+ "/web-security/study.html",
+ "/life/create-first-blog.html",
+ "/life/life-main-point.html",
+ "/tool/md-file-encode.html",
+ "/code/md5crack.html",
+ "/python/xpath.html",
+
+        ""];
+
+        var index = Math.floor(Math.random() * (urls.length-1));
+        window.location = urls[index];
+    }
+</script>
+<body onload="redirect()">
+</body>
+</html>

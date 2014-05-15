@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if articles %}
+        {% for article in (articles_page.object_list if articles_page else articles) %}
+            <article>
+       <div class="panel panel-default">
+   
+                <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+            <hr/>
+           <div class="panel-body">
+                {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
+                        {% include "includes/article_info.html" %}
+                {% endif %}
+                <div class="summary">{{ article.summary }}
+                    {% include 'includes/comment_count.html' %}
+                    <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">阅读更多 ...</a>
+                </div>
+           </div>
+        </div>
+            </article>
+        {% endfor %}
+    {% endif %}
+
+    {% include 'includes/pagination.html' %}
+{% endblock content %}
