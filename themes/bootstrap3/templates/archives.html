@@ -15,7 +15,7 @@
 
         <dl>
             {% for article in dates %}
-                <dt>{{ article.locale_date }}</dt>
+                <dt>{{ article.updatedate }}</dt>
                 <dd><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></dd>
             {% endfor %}
         </dl>
