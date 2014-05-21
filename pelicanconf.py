@@ -116,7 +116,7 @@ DISPLAY_HIGH = True
 DISPLAY_CATEGORIES_ON_MENU = False
 
 PLUGIN_PATH = u"plugins"
-PLUGINS = ["sitemap", "random_article", "neighbors", "update-date", "code_include"] #"gzip_cache"]
+PLUGINS = ["sitemap", "random_article", "update-date", "neighbors","code_include"] #"gzip_cache"]
 
 # 配置sitemap 插件
 SITEMAP = {

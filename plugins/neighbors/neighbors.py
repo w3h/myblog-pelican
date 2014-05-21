@@ -42,7 +42,7 @@ def neighbors(generator):
     set_neighbors(generator.articles, 'next_article', 'prev_article')
     
     for category, articles in generator.categories:
-        articles.sort(key=(lambda x: x.date), reverse=(True))
+        articles.sort(key=(lambda x: x.updatedate), reverse=(True))
         set_neighbors(
             articles, 'next_article_in_category', 'prev_article_in_category')
 
