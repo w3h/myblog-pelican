@@ -122,6 +122,10 @@ Tags: Discuz
 
 [工具源码下载链接](static/code/diz7.2.py)
 
+运行效果截图
+
+![Alt text](/static/images/diz7.2.GIF)
+
 
 #### **3、修复方法**
 
