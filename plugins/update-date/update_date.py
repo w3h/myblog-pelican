@@ -52,7 +52,7 @@ def set_update_date(content):
     try:
         content.updatedate = datetime.fromtimestamp(os.path.getmtime(content.source_path))
         content.updatedate = content.updatedate.replace(microsecond = 0)
-        content.date = content.updatedate
+        #content.date = content.updatedate
     except os.error:
         logging.error("{} not exists or not readable".format(content.source_path))
 

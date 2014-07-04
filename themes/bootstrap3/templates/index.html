@@ -3,13 +3,16 @@
     {% if articles %}
         {% for article in (articles_page.object_list if articles_page else articles) %}
             <article>
+	   <div class="entry-content">	
        <div class="panel panel-default">
            <div class="panel-title"> 
                 <h2>&nbsp&nbsp<a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
            </div> 
            <div class="panel-body">
                 {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
+                    <div class="well well-sm">
                         {% include "includes/article_info.html" %}
+                    </div>
                 {% endif %}
                 <div class="summary">{{ article.summary }}
                     {% include 'includes/comment_count.html' %}
@@ -17,6 +20,7 @@
                 </div>
            </div>
         </div>
+		</div>
             </article>
         {% endfor %}
     {% endif %}
