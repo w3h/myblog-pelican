@@ -125,7 +125,7 @@ Tags: Discuz
 
 5、利用上面的思路自己写了一个小软件，可以实现全自动利用
 
-[工具源码下载链接](static/code/diz7.2.py)
+[工具源码下载链接](/static/code/diz7.2.py)
 
 运行效果截图
 
