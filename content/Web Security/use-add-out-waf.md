@@ -63,7 +63,7 @@ Tags: SQL注入
 
 3.使用运算符，返回页面信息如下，可以看出与正常页面返回信息不一样，因此可以判断存在数字型注入，工具是无能为力了，只能盲注
 
-![ALT TEXT](/static/images/add-injection-2.gif)
+![ALT TEXT](/static/images/add-injection-3.gif)
 
 
 #### **2、盲注方法**

