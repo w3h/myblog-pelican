@@ -9,3 +9,10 @@
         ga('send', 'pageview');
     </script>
 {% endif %}
+
+{% if BAIDU_ANALYTICS_UNIVERSAL %}
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff6811cfe31593ad8ea878ccf278be5ec' type='text/javascript'%3E%3C/script%3E"));
+</script>
+{% endif %}
