@@ -115,7 +115,7 @@ DISPLAY_TAGS_ON_SIDEBAR = True
 DISPLAY_HIGH = True
 DISPLAY_CATEGORIES_ON_MENU = False
 
-PLUGIN_PATH = [u"plugins",]
+PLUGIN_PATHS = [u"plugins",]
 PLUGINS = ["sitemap", "random_article", "update-date", "neighbors","code_include"] #"gzip_cache"]
 
 # 配置sitemap 插件
