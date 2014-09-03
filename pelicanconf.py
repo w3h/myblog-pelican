@@ -78,7 +78,7 @@ TRANSLATION_FEED_ATOM = None
 LINKS =  ( 
             ('乌云', 'http://www.wooyun.org/index.php'),
             ('漏洞时代', 'http://0day5.com/'),
-            ('Python.org', 'http://python.org/'),
+            ('独自等待', 'http://www.waitalone.cn/'),
          )
 
 # Social widget
