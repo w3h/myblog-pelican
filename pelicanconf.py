@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'webhhh'
-SITENAME = u"Web - Security - Code"
+AUTHOR = u'W.HHH'
+SITENAME = u"W.HHH BLOG"
 SITEURL = "http://www.webhhh.net"
 #SITEURL = 'http://127.0.0.1:8000'
 
@@ -101,6 +101,7 @@ DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
 MENUITEMS = (
                 ('首页',SITEURL+'/index.html'),
                 ('WEB安全',SITEURL+'/category/web-security.html'),
+                ('移动安全',SITEURL+'/category/android-security.html'),
                 ('工具',SITEURL+'/category/tool.html'),
                 ('Python',SITEURL+'/category/python.html'),
                 ('源代码',SITEURL+'/category/code.html'),
