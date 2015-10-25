@@ -76,8 +76,6 @@ TRANSLATION_FEED_ATOM = None
 
 # Blogroll
 LINKS =  ( 
-            ('乌云', 'http://www.wooyun.org/index.php'),
-            ('漏洞时代', 'http://0day5.com/'),
             ('独自等待', 'http://www.waitalone.cn/'),
          )
 
@@ -100,11 +98,8 @@ PYGMENTS_STYLE = 'emacs'
 DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
 MENUITEMS = (
                 ('首页',SITEURL+'/index.html'),
-                ('WEB安全',SITEURL+'/category/web-security.html'),
-                ('移动安全',SITEURL+'/category/android-security.html'),
-                ('工具',SITEURL+'/category/tool.html'),
-                ('Python',SITEURL+'/category/python.html'),
-                ('源代码',SITEURL+'/category/code.html'),
+                ('安全',SITEURL+'/category/security.html'),
+                ('工具&代码',SITEURL+'/category/toolcode.html'),
                 ('生活',SITEURL+'/category/life.html'),        
                 ('关于我',SITEURL+'/life/life-main-point.html'),
             )
