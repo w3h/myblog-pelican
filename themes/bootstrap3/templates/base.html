@@ -43,6 +43,9 @@
         {% endif %}
     {% endif %}
 
+    <meta name="description" content="W.HHH,关注网络安全,物联网安全,原创博客。" />
+    <meta name="keywords" content="W.HHH,安全,黑客网站,黑客技术,互联网安全,web安全,系统安全,网络安全,渗透测试,漏洞,黑客工具" />
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.min.css" type="text/css"/>
     <!-- <link href="http://cdn.bootcss.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>   -->
@@ -83,10 +86,10 @@
             </button>
             <a href="{{ SITEURL }}/" class="navbar-brand">
                 {% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}"/> {% endif %}
-                {% if not HIDE_SITENAME %}{{ SITENAME }}{% endif %}
+                {% if not HIDE_SITENAME %} W.HHH | 安全&原创  {% endif %}
             </a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right">
             <ul class="nav navbar-nav">
                 {% for title, link in MENUITEMS %}
                     <li><a href="{{ link }}">{{ title }}</a></li>

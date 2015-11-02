@@ -98,7 +98,7 @@ PYGMENTS_STYLE = 'emacs'
 DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
 MENUITEMS = (
                 ('首页',SITEURL+'/index.html'),
-                ('安全',SITEURL+'/category/security.html'),
+                ('网络安全',SITEURL+'/category/security.html'),
                 ('工具&代码',SITEURL+'/category/toolcode.html'),
                 ('生活',SITEURL+'/category/life.html'),        
                 ('关于我',SITEURL+'/life/life-main-point.html'),
@@ -131,7 +131,7 @@ SITEMAP = {
 
 # 配置 random_article 插件
 RANDOM = "random.html"
-DISPLAY_RANDOM = True
+DISPLAY_RANDOM = False
 
 # 配置 neighbors 插件
 DISPLAY_NEIGHBORS = True
