@@ -1,24 +1,19 @@
-﻿<footer class="post-info">
-    <span class="label label-default">创建时间</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
-    </span>
-    <span class="label label-default">修改时间</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.updatedate }}</time>
-    </span>   
+﻿<footer class="article-meta">
 
     {% if SHOW_ARTICLE_AUTHOR %}
+	<span class="item name">
         {% if article.author %}
-            <span class="label label-default">By</span>
+            <!-- <span class="label label-default">By</span> -->
             <a href="{{ SITEURL }}/{{ article.author.url }}"><i class="fa fa-user"></i> {{ article.author }}</a>
         {% endif %}
+	</span>
     {% endif %}
-
-    {% if SHOW_ARTICLE_CATEGORY %}
-        <span class="label label-default">Category</span>
-        <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-    {% endif %}
+	
+	<span class="item time">
+	 <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.updatedate }}</time>
+    </span>  
+	</span>	
 
     {% if PDF_PROCESSOR %}
         <span class="label label-default">
@@ -26,7 +21,10 @@
         </span>
     {% endif %}
 
+	<span class="item tag">
     {% include 'includes/taglist.html' %}
+	</span>
+	
     {% import 'includes/translations.html' as translations with context %}
     {{ translations.translations_for(article) }}
 </footer><!-- /.post-info -->

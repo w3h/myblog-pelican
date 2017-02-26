@@ -1,4 +1,4 @@
-<div class="row">
+<div class="sidebar_main">
 <div class="well well-sm" id="sidebar">
 <aside>
     <section>
@@ -7,7 +7,10 @@
                 {% if RECENT_POST_COUNT is not defined %}
                     {% set RECENT_POST_COUNT = 5 %}
                 {% endif %}
-                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">最新博文</span></h4>
+                <li class="list-group-item">
+                <div>
+                    <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">近期文章</span></h4>
+                </div>
                     <ul class="list-group" id="recentposts">
                     {% for article in articles[:RECENT_POST_COUNT] %}
                         <li class="list-group-item">
@@ -24,7 +27,7 @@
 </div> 
 </div> 
 
-<div class="row">
+<div class="sidebar_main">
 <div class="well well-sm" id="sidebar">
 <aside>
     <section>
@@ -34,7 +37,7 @@
 </div> 
 </div> 
 
-<div class="row">
+<div class="sidebar_main">
 <div class="well well-sm" id="sidebar">
 <aside>
     <section>
@@ -44,7 +47,7 @@
 </div> 
 </div> 
 
-<div class="row">
+<div class="sidebar_main">
 <div class="well well-sm" id="sidebar">
 <aside>
     <section>

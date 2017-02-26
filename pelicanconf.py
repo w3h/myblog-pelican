@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'W.HHH'
-SITENAME = u"W.HHH BLOG"
-SITEURL = "http://www.webhhh.net"
+AUTHOR = u'W3H'
+SITENAME = u"工匠实验室"
+SITEURL = "http://icsmaster.com"
 #SITEURL = 'http://127.0.0.1:8000'
 
 # 时间日期设置
@@ -15,11 +15,15 @@ DATE_FORMATS = {
 }
 DEFAULT_DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
 FALLBACK_ON_FS_DATE = True
+SITELOGO = 'logo.png'
+HIDE_SITENAME = True
+SITELOGO_SIZE_W = 40
+SITELOGO_SIZE_H = 40
 
 # 文章格式设置
 DEFAULT_LANG = u'ch'
-DEFAULT_PAGINATION = 7
-SUMMARY_MAX_LENGTH = 20
+DEFAULT_PAGINATION = 8
+SUMMARY_MAX_LENGTH = 15
 FILENAME_METADATA = '(?P<slug>.*)'
 RELATIVE_URLS = True
 
@@ -34,12 +38,14 @@ DEFAULT_CATEGORY = '未分类'
 EXTRA_PATH_METADATA = {
         'extra/favicon.ico' : { 'path': 'favicon.ico' },
         'extra/robots.txt' : { 'path': 'robots.txt' },
+        'extra/logo.png' : { 'path': 'logo.png' },
 }
 
 STATIC_PATHS = [
     'static',    
     'extra/robots.txt',
     'extra/favicon.ico',
+    'extra/logo.png',
     ]
 
 ARTICLE_URL = '{category}/{slug}.html'
@@ -98,10 +104,11 @@ PYGMENTS_STYLE = 'emacs'
 DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
 MENUITEMS = (
                 ('首页',SITEURL+'/index.html'),
-                ('网络安全',SITEURL+'/category/security.html'),
-                ('工具&代码',SITEURL+'/category/toolcode.html'),
-                ('生活',SITEURL+'/category/life.html'),        
-                ('关于我',SITEURL+'/life/life-main-point.html'),
+                ('资讯',SITEURL+'/index.html'),
+                ('研究',SITEURL+'/index.html'),
+                ('资源',SITEURL+'/index.html'),
+                ('导航',SITEURL+'/index.html'),        
+                ('关于',SITEURL+'/other/about.html'),
             )
 
 DISPLAY_PAGES_ON_MENU = True
@@ -137,20 +144,20 @@ DISPLAY_RANDOM = False
 DISPLAY_NEIGHBORS = True
 
 # 配置评论
-DISQUS_SITENAME = "webhhh"
+DISQUS_SITENAME = "w3h"
 
 # 配置Google Analiytics
 #GOOGLE_ANALYTICS_UNIVERSAL = r'UA-50980139-1'
 #GOOGLE_ANALYTICS_UNIVERSAL_PROPERTY = r'webhhh.net'
 
 # 配置BAIDU Analiytics
-BAIDU_ANALYTICS_UNIVERSAL = r'webhhh'
+BAIDU_ANALYTICS_UNIVERSAL = r'w3h'
 
 # 显示作者
 SHOW_ARTICLE_AUTHOR = True
 
 # Github配置
-GITHUB_USER = 'webhhh'
+GITHUB_USER = 'w3h'
 
 # 以创建时间更新Date
 UPDATE_LOCALE_TO_CREATE_TIME = True

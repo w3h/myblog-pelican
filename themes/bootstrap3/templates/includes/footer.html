@@ -1,6 +1,5 @@
-<footer>
+<footer class="myfooter">
    <div class="container">
-      <hr>
       <div class="row">
          {% if articles %}
             {% set copy_date = articles[0].date.strftime('%Y') %}
@@ -15,7 +14,14 @@
               <p><small>{{ cc_license_mark(cc_name=CC_LICENSE,derivatives=CC_LICENSE_DERIVATIVES,commercial=CC_LICENSE_COMMERCIAL,attr_markup=CC_ATTR_MARKUP,attr_props={'title':SITENAME,'name':article.author if article else AUTHOR,'url':SITEURL}) }}</small></p>
             {% endif %}
          </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#" id="pull-right-link">Back to top</a></p></div>
       </div>
    </div>
 </footer>
+
+
+<script type="text/javascript">
+    if(document.body.scrollWidth < 700){
+      document.getElementById('pull-right-link').style.display = 'none';
+    }
+</script>

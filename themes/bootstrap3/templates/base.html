@@ -43,8 +43,8 @@
         {% endif %}
     {% endif %}
 
-    <meta name="description" content="W.HHH,关注网络安全,物联网安全,原创博客。" />
-    <meta name="keywords" content="W.HHH,安全,黑客网站,黑客技术,互联网安全,web安全,系统安全,网络安全,渗透测试,漏洞,黑客工具" />
+    <meta name="description" content="专注于工控网络安全、物联网安全、基础设施安全。" />
+    <meta name="keywords" content="工匠实验室,工控网络安全,物联网安全,基础设施安全" />
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.min.css" type="text/css"/>
@@ -75,7 +75,7 @@
 </head>
 <body>
 
-<div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top" role="navigation">
+<div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top myheader" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -84,10 +84,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
             <a href="{{ SITEURL }}/" class="navbar-brand">
-                {% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}"/> {% endif %}
-                {% if not HIDE_SITENAME %} W.HHH | 安全&原创  {% endif %}
+                {% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE_W }}" height="{{ SITELOGO_SIZE_H }}"/> {% endif %}
+                {% if not HIDE_SITENAME %} ICSMASTER  {% endif %}
             </a>
+                <div class="brand" id="titlename">工匠实验室 - 专注工控安全研究</div>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right">
             <ul class="nav navbar-nav">
@@ -160,6 +162,9 @@
 
 <script type="text/javascript">
 {% block js_on_body_ready %}
+if(document.body.scrollWidth < 700){
+      document.getElementById("titlename").innerHTML="工匠实验室";
+}
 {% endblock js_on_body_ready %}
 </script>
 
